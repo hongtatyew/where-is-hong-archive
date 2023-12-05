@@ -3,21 +3,46 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.heroBannerBackground {
+  background-image: url("/img/undraw_bike_ride.svg");
+  background-position: right;
+  background-repeat: no-repeat; 
+}
+
+.heroBannerText {
+  padding: 8rem 0;
+  text-align: left;
   position: relative;
   overflow: hidden;
+  height:836px;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
   }
+
+  .heroBannerBackground {
+    background-position: top center;
+    background-size: auto 500px;
+    padding-top: 550px
+  }
+  
+  .heroBannerText {
+    padding: unset;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height:auto;
+  }
+
+  .heroBannerPlaceholder {
+    display: none;
+  }
 }
 
 .buttons {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
