@@ -12,7 +12,7 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero", styles.heroBanner)}>
       <div className={clsx("container", styles.heroBannerBackground)}>
-        <div class="row">
+        <div className="row">
           <div className={clsx("col col--6", styles.heroBannerText)}>
             <Heading as="h1" className="hero__title">
               {siteConfig.title}

@@ -41,6 +41,13 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .heroBannerBackground {
+    background-size: auto 300px;
+    padding-top: 350px
+  }
+}
+
 .buttons {
   /* display: flex;
   align-items: center;
