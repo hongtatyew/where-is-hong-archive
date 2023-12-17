@@ -27,7 +27,7 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  clientModules: ['./src/client-modules/font-awesome.client-module.js'],
+  clientModules: ["./src/client-modules/font-awesome.client-module.js"],
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -46,7 +46,7 @@ const config = {
           sidebarPath: "./sidebars.js",
         },
         blog: {
-          routeBasePath: "/diary",
+          routeBasePath: "/journal",
           showReadingTime: true,
         },
         theme: {
@@ -67,16 +67,19 @@ const config = {
           alt: "Where is Hong?",
           src: "img/logo.svg",
         },
-        items: [{ to: "/diary", label: "DIARY", position: "right" }],
+        items: [{ to: "/journal", label: "Journal", position: "right" }],
       },
       footer: {
-        style: "dark",
         links: [],
         copyright: `Copyright © ${new Date().getFullYear()} Hong Tat`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+      },
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: true,
       },
     }),
 

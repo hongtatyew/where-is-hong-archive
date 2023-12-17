@@ -3,7 +3,7 @@ import { format } from "date-fns";
 
 export default function HeroComponent({ title, tagline }) {
   return (
-    <div className="relative isolate px-6 pt-14 lg:px-8">
+    <div className="relative isolate px-6 py-20 lg:px-8">
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
@@ -22,7 +22,10 @@ export default function HeroComponent({ title, tagline }) {
             {title}
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-          Get ready to tag along on my wild bike ride from Malaysia to Denmark, starting {format(new Date('2023-12-31'), "P")}! I'll be sharing all the awesome moments as I pedal through different countries and soak up the adventure!
+            Hey all, I'm gonna take on a wild bike ride from Malaysia to
+            Denmark, starting <strong>December 31, 2023</strong>! I'll be
+            sharing all the awesome moments as I pedal through different
+            countries and soak up the adventure!
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
@@ -35,7 +38,7 @@ export default function HeroComponent({ title, tagline }) {
               href="#"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
-              Learn more <span aria-hidden="true">→</span>
+              Read more <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>

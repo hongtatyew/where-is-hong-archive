@@ -8,104 +8,158 @@ export default function TrackingComponent() {
     setTimeout(() => {
       setLocations([
         {
-          latitude: 3.003664916524096,
-          longitude: 101.61663645306207,
-          location: "Milan, Italy",
+          latitude: 3.0012515499439996,
+          longitude: 101.6139173069731,
+          location: "Puchong, Selangor, Malaysia",
           weather: {
             temperature: 0, // Celsius
             condition: "sunny", // clear, sunny, raini, cloudy, etc
             windSpeed: 0, // kph
           },
           description:
-            "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-          updatedAt: new Date("2023-12-17T08:02:16.935Z"), // iso8601 with timezone
-        },
-        {
-          latitude: 3.0559677940849603,
-          longitude: 101.49782988750258,
-          location: "Milan, Italy",
-          weather: {
-            temperature: 0, // Celsius
-            condition: "windy", // clear, sunny, raini, cloudy, etc
-            windSpeed: 0, // kph
-          },
-          description:
-            "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-          updatedAt: new Date(), // iso8601 with timezone
-        },
-        {
-          latitude: 3.2558609628641193,
-          longitude: 101.30816591820917,
-          location: "Milan, Italy",
-          weather: {
-            temperature: 0, // Celsius
-            condition: "cloudy", // clear, sunny, raini, cloudy, etc
-            windSpeed: 0, // kph
-          },
-          description:
-            "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-          updatedAt: new Date(), // iso8601 with timezone
-        },
-        {
-          latitude: 3.3220284585844224,
-          longitude: 101.26533814132293,
-          location: "Milan, Italy",
-          weather: {
-            temperature: 0, // Celsius
-            condition: "rain", // clear, sunny, raini, cloudy, etc
-            windSpeed: 0, // kph
-          },
-          description:
-            "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-          updatedAt: new Date(), // iso8601 with timezone
-        },
-        {
-          latitude: 3.424245504492505,
-          longitude: 101.1772101401936,
-          location: "Milan, Italy",
-          weather: {
-            temperature: 0, // Celsius
-            condition: "thunderstorm", // clear, sunny, raini, cloudy, etc
-            windSpeed: 0, // kph
-          },
-          description:
-            "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-          updatedAt: new Date(), // iso8601 with timezone
+            "Here we go, all geared up and ready to roll! Today marks the beginning of my journey towards Denmark. Hoping to reach Sungai Besar before the rain pours down. 🙏🏻", // 2000 characters?
+          updatedAt: new Date("2023-12-31T07:00:00+08:00"), // iso8601 with timezone
         },
       ]);
+      // setLocations([
+      //   {
+      //     latitude: 3.003664916524096,
+      //     longitude: 101.61663645306207,
+      //     location: "Milan, Italy",
+      //     weather: {
+      //       temperature: 0, // Celsius
+      //       condition: "sunny", // clear, sunny, raini, cloudy, etc
+      //       windSpeed: 0, // kph
+      //     },
+      //     description:
+      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
+      //     updatedAt: new Date("2023-12-17T08:02:16.935Z"), // iso8601 with timezone
+      //   },
+      //   {
+      //     latitude: 3.0559677940849603,
+      //     longitude: 101.49782988750258,
+      //     location: "Milan, Italy",
+      //     weather: {
+      //       temperature: 0, // Celsius
+      //       condition: "windy", // clear, sunny, raini, cloudy, etc
+      //       windSpeed: 0, // kph
+      //     },
+      //     description:
+      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
+      //     updatedAt: new Date(), // iso8601 with timezone
+      //   },
+      //   {
+      //     latitude: 3.2558609628641193,
+      //     longitude: 101.30816591820917,
+      //     location: "Milan, Italy",
+      //     weather: {
+      //       temperature: 0, // Celsius
+      //       condition: "cloudy", // clear, sunny, raini, cloudy, etc
+      //       windSpeed: 0, // kph
+      //     },
+      //     description:
+      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
+      //     updatedAt: new Date(), // iso8601 with timezone
+      //   },
+      //   {
+      //     latitude: 3.3220284585844224,
+      //     longitude: 101.26533814132293,
+      //     location: "Milan, Italy",
+      //     weather: {
+      //       temperature: 0, // Celsius
+      //       condition: "rain", // clear, sunny, raini, cloudy, etc
+      //       windSpeed: 0, // kph
+      //     },
+      //     description:
+      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
+      //     updatedAt: new Date(), // iso8601 with timezone
+      //   },
+      //   {
+      //     latitude: 3.424245504492505,
+      //     longitude: 101.1772101401936,
+      //     location: "Milan, Italy",
+      //     weather: {
+      //       temperature: 0, // Celsius
+      //       condition: "thunderstorm", // clear, sunny, raini, cloudy, etc
+      //       windSpeed: 0, // kph
+      //     },
+      //     description:
+      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
+      //     updatedAt: new Date(), // iso8601 with timezone
+      //   },
+      // ]);
     }, 2000);
   }, []);
 
   return (
-    <>
-      <div className="bg-white py-24 sm:py-32" id="i-am-here">
-        <div className="mx-auto px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-indigo-600">
-              Where am I now?
-            </h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Everything you need to deploy your app
-            </p>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-              Suspendisse eget egestas a elementum pulvinar et feugiat blandit
-              at. In mi viverra elit nunc.
-            </p>
+    <div
+      id="i-am-here"
+      className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
+    >
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <svg
+          className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+              width={200}
+              height={200}
+              x="50%"
+              y={-1}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M100 200V.5M.5 .5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+            <path
+              d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+              strokeWidth={0}
+            />
+          </svg>
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+          />
+        </svg>
+      </div>
+      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+          <div className="lg:pr-4">
+            <div className="lg:max-w-lg">
+              <p className="text-base font-semibold leading-7 text-indigo-600">
+                Where I've been?
+              </p>
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Tracking my journey on wheels in real time!
+              </h1>
+              <p className="mt-6 text-xl leading-8 text-gray-700">
+                Cheer for Me as I Roll: Follow my incredible journey as I pedal
+                across continents, tracing my adventure from Malaysia to Denmark
+                and beyond!
+              </p>
+              <p className="mt-3 text-sm leading-8 text-gray-500">
+                Please note: only the most recent 5 locations will be displayed.
+              </p>
+            </div>
           </div>
-          <div className="mx-0 mt-16 sm:mt-20 lg:mt-24">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-              <div className="relative pl-16">
-                <LocationTimelineComponents locations={locations} />
-              </div>
-              <div className="relative pl-16">
-                <GoogleMap locations={locations} />
-              </div>
+        </div>
+        <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+          <GoogleMap locations={locations} />
+        </div>
+        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+          <div className="lg:pr-4">
+            <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+              <LocationTimelineComponents locations={locations} />
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -122,14 +176,66 @@ function WeatherComponent({ condition }) {
   return <FontAwesomeIcon icon="fa-solid fa-question" />;
 }
 
+function LocationTimelineSkelatonComponents() {
+  return (
+    <div
+      role="status"
+      className="max-w-md p-4 space-y-4 border border-gray-200 divide-y divide-gray-200 rounded shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700"
+    >
+      <div className="pt-4">
+        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-600 w-16 mb-2.5"></div>
+        <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+      </div>
+
+      <div className="pt-4">
+        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-600 w-16 mb-2.5"></div>
+        <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+      </div>
+
+      <div className="pt-4">
+        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-600 w-16 mb-2.5"></div>
+        <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+      </div>
+
+      <div className="pt-4">
+        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-600 w-16 mb-2.5"></div>
+        <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+      </div>
+
+      <div className="pt-4">
+        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-600 w-16 mb-2.5"></div>
+        <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+      </div>
+
+      <span className="sr-only">Loading...</span>
+    </div>
+  );
+}
+
 function LocationTimelineComponents({ locations }) {
-  if (locations.length === 0) return <>Loading...</>;
+  if (locations.length === 0) return <LocationTimelineSkelatonComponents />;
+
   return locations.map((item, index) => {
     return (
       <div className="group relative py-6 pl-8" key={index}>
         <div className="mb-1 flex flex-col items-start before:absolute before:left-2 before:h-full before:-translate-x-1/2 before:translate-y-3 before:self-start before:bg-slate-300 before:px-px after:absolute after:left-2 after:box-content after:h-2 after:w-2 after:-translate-x-1/2 after:translate-y-1.5 after:rounded-full after:border-4 after:border-slate-50 after:bg-indigo-600 group-last:before:hidden">
           <time className="left-0 mb-3 inline-flex h-6 px-4 translate-y-0.5 items-center justify-center rounded-full bg-emerald-100 text-xs font-semibold uppercase text-emerald-600">
-            {format(item.updatedAt, "Pp")}
+            {format(item.updatedAt, "dd MMM yyyy, p")}
           </time>
 
           <div className="text-xl font-bold text-slate-900 mb-2">
@@ -167,19 +273,6 @@ function LocationTimelineComponents({ locations }) {
   });
 }
 
-function HeaderComponent() {
-  return (
-    <div className="max-w-2xl mb-10 sm:mb-6">
-      <h2 className="leading-snug text-3xl font-bold tracking-tight mb-3 uppercase sm:text-4xl">
-        Where am i?
-      </h2>
-      <p className="text-lg leading-8 text-zinc-600">
-        Stay in the loop on my whereabouts. Follow my journey in real time.
-      </p>
-    </div>
-  );
-}
-
 function GoogleMap({ locations }) {
   const coordinates = locations.map(
     (item) => `${item.latitude},${item.longitude}`
@@ -190,9 +283,11 @@ function GoogleMap({ locations }) {
   if (coordinates.length == 1)
     return (
       <iframe
-        className={"w-full h-full aspect-video"}
+        className={
+          "aspect-video max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 w-full h-96"
+        }
         referrerPolicy={"no-referrer-when-downgrade"}
-        src={`https://www.google.com/maps/embed/v1/places?key=AIzaSyDw1nB817qQxGFQ4AtovQAQx6y23B-qsoA&q=${coordinates[0]}`}
+        src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyDw1nB817qQxGFQ4AtovQAQx6y23B-qsoA&q=${coordinates[0]}`}
         allowFullScreen
       ></iframe>
     );
@@ -200,7 +295,9 @@ function GoogleMap({ locations }) {
   if (coordinates.length == 2)
     return (
       <iframe
-        className={"w-full h-full aspect-video"}
+        className={
+          "aspect-video max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 w-full h-96"
+        }
         referrerPolicy={"no-referrer-when-downgrade"}
         src={`https://www.google.com/maps/embed/v1/directions?key=AIzaSyDw1nB817qQxGFQ4AtovQAQx6y23B-qsoA&origin=${coordinates[0]}&destination=${coordinates[1]}&mode=driving&avoid=tolls|highways|ferries`}
         allowFullScreen
@@ -213,7 +310,9 @@ function GoogleMap({ locations }) {
   waypoints = waypoints.join("|");
   return (
     <iframe
-      className={"w-full h-full aspect-video"}
+      className={
+        "aspect-video max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 w-full h-96"
+      }
       referrerPolicy={"no-referrer-when-downgrade"}
       src={`https://www.google.com/maps/embed/v1/directions?key=AIzaSyDw1nB817qQxGFQ4AtovQAQx6y23B-qsoA&origin=${origin}&destination=${destination}&waypoints=${waypoints}&mode=driving&avoid=tolls|highways|ferries`}
       allowFullScreen

@@ -46,9 +46,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.navbar__link,
-.navbar__title {
+h6, .navbar__title {
   background: linear-gradient(
     115deg,
     var(--ifm-color-primary),
@@ -56,6 +54,10 @@ h6,
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.navbar__link {
+  color: var(--tw-text)
 }
 
 .footer__copyright {
