@@ -10,7 +10,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "WHERE IS HONG?",
   tagline:
-    "Follow my bike tour adventure through real-time location update, immersive photos and captivating videos.",
+    "Get ready to tag along on my wild bike ride from Malaysia to Denmark, starting December 31, 2023! I'll be sharing all the awesome moments as I pedal through different countries and soak up the adventure!",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -26,6 +26,8 @@ const config = {
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+
+  clientModules: ['./src/client-modules/font-awesome.client-module.js'],
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -44,6 +46,7 @@ const config = {
           sidebarPath: "./sidebars.js",
         },
         blog: {
+          routeBasePath: "/diary",
           showReadingTime: true,
         },
         theme: {
@@ -64,31 +67,31 @@ const config = {
           alt: "Where is Hong?",
           src: "img/logo.svg",
         },
-        items: [
-          {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "TUTORIAL",
-          },
-          { to: "/blog", label: "BLOG", position: "left" },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
-        ],
+        items: [{ to: "/diary", label: "DIARY", position: "right" }],
       },
       footer: {
         style: "dark",
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} Yew Hong Tat. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Hong Tat`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
+
+  plugins: [
+    async function addTailwindPostCss(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 };
 
 export default config;

@@ -2,15 +2,16 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import TrackingComponent from "@site/src/components/tracking-component";
 
 import Heading from "@theme/Heading";
 import styles from "./index.module.css";
+import HeroSection from "../components/hero-component";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx("hero", styles.heroBanner)}>
+    <header className={clsx("hero shadow--lw", styles.heroBanner)}>
       <div className={clsx("container", styles.heroBannerBackground)}>
         <div className="row">
           <div className={clsx("col col--6", styles.heroBannerText)}>
@@ -20,7 +21,7 @@ function HomepageHeader() {
             <p className="hero__subtitle">{siteConfig.tagline}</p>
             <div className={styles.buttons}>
               <Link
-                className="button button--secondary button--lg"
+                className="button button--primary button--lg from-cyan-500 to-blue-500"
                 to="/docs/intro"
               >
                 Locate me
@@ -39,13 +40,10 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
-      <HomepageHeader />
+    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+      <HeroSection title={siteConfig.title} tagline={siteConfig.tagline} />
       <main>
-        <HomepageFeatures />
+        <TrackingComponent />
       </main>
     </Layout>
   );

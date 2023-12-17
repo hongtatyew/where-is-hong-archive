@@ -4,6 +4,10 @@
  * work well for content-centric websites.
  */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #6200ff;
@@ -33,6 +37,10 @@
   --ifm-navbar-background-color: transparent;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -48,4 +56,8 @@ h6,
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.footer__copyright {
+  text-align: right;
 }

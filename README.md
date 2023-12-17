@@ -39,3 +39,22 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+
+### Reference
+
+https://infima.dev/docs/layout/grid
+
+#### Example of landing page in Figma
+https://www.figma.com/file/X8EAalJa8drwDp71oZVnWH/50%2B-Landing-page-designs-(Community)?type=design&node-id=801-2256&mode=design&t=5IWGXjUCytGQCioY-0
+
+#### timeline
+https://codepen.io/darcyvoutt/pen/ogPrpK/
+
+#### tailwind landing page
+https://tailwindui.com/components/marketing/sections/heroes
+
+#### Google api token
+```
+AIzaSyDw1nB817qQxGFQ4AtovQAQx6y23B-qsoA
+```

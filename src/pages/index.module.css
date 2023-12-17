@@ -3,10 +3,14 @@
  * and scoped locally.
  */
 
+.heroBanner {
+  padding: 0 2rem;
+}
+
 .heroBannerBackground {
   background-image: url("/img/undraw_bike_ride.svg");
   background-position: right;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 .heroBannerText {
@@ -14,7 +18,7 @@
   text-align: left;
   position: relative;
   overflow: hidden;
-  height:836px;
+  height: 836px;
 }
 
 @media screen and (max-width: 996px) {
@@ -25,15 +29,15 @@
   .heroBannerBackground {
     background-position: top center;
     background-size: auto 500px;
-    padding-top: 550px
+    padding-top: 550px;
   }
-  
+
   .heroBannerText {
     padding: 0rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
-    height:auto;
+    height: auto;
   }
 
   .heroBannerPlaceholder {
@@ -44,7 +48,6 @@
 @media screen and (max-width: 576px) {
   .heroBannerBackground {
     background-size: auto 300px;
-    padding-top: 350px
+    padding-top: 350px;
   }
 }
-
