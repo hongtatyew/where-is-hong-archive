@@ -35,7 +35,7 @@ export default function HeroComponent({ title, tagline }) {
               Locate me
             </Link>
             <a
-              href="#"
+              href="journals"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Read more <span aria-hidden="true">→</span>

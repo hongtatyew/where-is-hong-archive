@@ -46,7 +46,7 @@ const config = {
           sidebarPath: "./sidebars.js",
         },
         blog: {
-          routeBasePath: "/journal",
+          routeBasePath: "/journals",
           showReadingTime: true,
         },
         theme: {
@@ -67,7 +67,7 @@ const config = {
           alt: "Where is Hong?",
           src: "img/logo.svg",
         },
-        items: [{ to: "/journal", label: "Journal", position: "right" }],
+        items: [{ to: "/journals", label: "Journals", position: "right" }],
       },
       footer: {
         links: [],
