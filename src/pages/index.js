@@ -16,8 +16,11 @@ export default function Home() {
         <ReasonToCycleComponent />
         <TrackingComponent />
         {/* <InstagramFeedComponent />
-        <SpecialThanksComponent /> */}
+         */}
+        <SpecialThanksComponent />
       </main>
     </Layout>
   );
 }
+
+

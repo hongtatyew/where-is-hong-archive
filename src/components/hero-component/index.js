@@ -22,10 +22,11 @@ export default function HeroComponent({ title, tagline }) {
             {title}
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Hey all, I'm gonna take on a wild bike ride from Malaysia to
-            Denmark, starting <strong>December 31, 2023</strong>! I'll be
-            sharing all the awesome moments as I pedal through different
-            countries and soak up the adventure!
+            Hey everyone, get ready for an epic adventure! I'm setting off on a
+            wild bike ride from Malaysia to Denmark, kicking off on{" "}
+            <strong>December 31, 2023</strong>. Stay tuned as I share all the
+            incredible moments, pedaling through diverse countries and soaking
+            up every bit of this thrilling adventure!
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link

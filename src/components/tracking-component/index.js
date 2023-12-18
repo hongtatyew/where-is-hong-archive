@@ -137,7 +137,7 @@ export default function TrackingComponent() {
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Tracking my journey on wheels in real time!
               </h1>
-              <p className="mt-6 text-xl leading-8 text-gray-700">
+              <p className="mt-6 text-xl leading-8 text-gray-600">
                 Cheer for Me as I Roll: Follow my incredible journey as I pedal
                 across continents, tracing my adventure from Malaysia to Denmark
                 and beyond!
@@ -148,7 +148,7 @@ export default function TrackingComponent() {
             </div>
           </div>
         </div>
-        <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+        <div className="-mt-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <GoogleMap locations={locations} />
         </div>
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">

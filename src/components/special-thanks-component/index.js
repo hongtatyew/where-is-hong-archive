@@ -1,100 +1,105 @@
+const data = [
+  {
+    name: "Malcalm Chew",
+    avatar: "img/thanks/malcalm.jpg",
+    message:
+      "Malcalm has been amazing in preparing me for this journey. He's trained me for long-distance cycling, connected me with J Cycles Garage who generously taught me basic bike repair skills, lent me his bike computer, and offered invaluable advice and support. Grateful for his guidance every step of the way!",
+    pictureUrl: "img/thanks/malcalm-1.jpg",
+  },
+  {
+    name: "Siong Yuen Cheah",
+    avatar: "img/thanks/siong-yuen.jpg",
+    message:
+      "Siong Yuen's my running mate, and when he heard about my bike tour, he came through big time, offering his solar panel. That thing's gonna be a game-changer when I'm in the middle of nowhere needing a charge for my devices. Huge thanks for your generosity",
+    pictureUrl: "img/thanks/siong-yuen-1.jpg",
+  },
+  {
+    name: "J Cycles Garage",
+    avatar: "img/thanks/j-cycle.jpg",
+    url: "https://www.facebook.com/jcyclesgarage",
+    message:
+      "This bike shop stepped up big time, teaching me basic bike repair skills and prepping my bike for this trip. I was struggling to find someone, but they saved the day. Super grateful for their generosity and support!",
+  },
+  {
+    name: "Kim Lykke Pedersen",
+    avatar: "img/thanks/kim.jpg",
+    message:
+      "Kim, my gym, running, and soon-to-be cycling buddy, has been an amazing support system. He's given me advice on what gear to wear, what to expect on the trip, and what to buy. While he was here in Malaysia, he motivated me to push harder in my runs. I'm thrilled that he'll be joining me for the last 200KM of this incredible journey. Looking forward to seeing him again and sharing this unforgettable experience together. So grateful for his friendship and unwavering support!",
+    pictureUrl: "img/thanks/kim-1.jpg",
+  }
+];
+
+function NameComponent({ name, url }) {
+  if (url)
+    return (
+      <a
+        href={url}
+        target="_blank"
+        className="font-bold text-xl text-gray-900 leading-none flex-1 text-indigo-600"
+      >
+        {name}
+      </a>
+    );
+  return (
+    <span className="font-bold text-xl text-gray-900 leading-none flex-1">
+      {name}
+    </span>
+  );
+}
+
+function PersonalThanksComponent({ personalThanks }) {
+  return (
+    <div className="mb-8 sm:break-inside-avoid">
+      <div className="border rounded-lg shadow-lg">
+        <div className="p-6 sm:p-8">
+          <div className="flex items-center">
+            <img
+              className="w-14 h-14 rounded-full mr-4"
+              src={personalThanks.avatar}
+              alt={personalThanks.name}
+            />
+            <NameComponent
+              name={personalThanks.name}
+              url={personalThanks.url}
+            />
+          </div>
+
+          <p className="mt-4 text-gray-700">{personalThanks.message}</p>
+        </div>
+        {personalThanks.pictureUrl && (
+          <img
+            class="w-full rounded-b-lg"
+            src={personalThanks.pictureUrl}
+            alt={personalThanks.name}
+          ></img>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function SpecialThanksComponent() {
   return (
-    <>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="container px-6 py-10 mx-auto">
-          <div className="lg:-mx-6 lg:flex lg:items-center">
-            <img
-              className="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-96 rounded-lg lg:h-[36rem]"
-              src="https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-              alt=""
-            />
+    <section className="bg-white">
+      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <h2 className="text-base font-semibold leading-7 text-indigo-600">
+          I can't thank them enough
+        </h2>
+        <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          The trip is made possible by these awesome people
+        </p>
+        <p className="mt-6 text-lg leading-8 text-gray-600">
+          These incredible folks have been instrumental in prepping me for this
+          bike tour, offering the guidance and support I needed to make this
+          trip possible. I greatly appreciate you and all that you do for me.
+        </p>
 
-            <div className="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
-              <p className="text-5xl font-semibold text-blue-500 ">“</p>
-
-              <h1 className="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96">
-                Help us improve our productivity
-              </h1>
-
-              <p className="max-w-lg mt-6 text-gray-500 dark:text-gray-400 ">
-                “ Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempore quibusdam ducimus libero ad tempora doloribus expedita
-                laborum saepe voluptas perferendis delectus assumenda rerum,
-                culpa aperiam dolorum, obcaecati corrupti aspernatur a. ”
-              </p>
-
-              <h3 className="mt-6 text-lg font-medium text-blue-500">Mia Brown</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Marketing Manager at Stech
-              </p>
-
-              <div className="flex items-center justify-between mt-12 lg:justify-start">
-                <button
-                  title="left arrow"
-                  className="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </button>
-
-                <button
-                  title="right arrow"
-                  className="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:mx-6 hover:bg-gray-100"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
+        <div className="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8">
+          {data.map((item) => {
+            return <PersonalThanksComponent personalThanks={item} />;
+          })}
         </div>
-      </section>
-      <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
-        <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
-        <div className="mx-auto max-w-2xl lg:max-w-4xl">
-          <figure className="mt-10">
-            <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-              <p>“Thanks for the training and the bike computer.”</p>
-            </blockquote>
-            <figcaption className="mt-10">
-              <img
-                className="mx-auto h-10 w-10 rounded-full"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
-              />
-              <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                <div className="font-semibold text-gray-900">Malcalm Chew</div>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
