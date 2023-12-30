@@ -1,5 +1,19 @@
 const data = [
   {
+    name: "Mei Yee Yip",
+    avatar: "img/thanks/meiyee.jpg",
+    message:
+      "The person I owe the biggest thanks to is my wife. Instead of declining when I mentioned this trip, she chose to join me. Thank you for all the support you've provided me.",
+    pictureUrl: "img/thanks/meiyee-1.jpg",
+  },
+  {
+    name: "Michael Mortensen",
+    avatar: "img/thanks/mmort.jpg",
+    message:
+      "The location tracker wouldn't have been possible without the invaluable assistance from my teammate, Michael. He not only inspired me to track my whereabout using application but also aided me in developing the API within a tight deadline. Thank you so much, Michael.",
+  },
+  
+  {
     name: "Malcalm Chew",
     avatar: "img/thanks/malcalm.jpg",
     message:
@@ -68,7 +82,7 @@ function PersonalThanksComponent({ personalThanks }) {
         </div>
         {personalThanks.pictureUrl && (
           <img
-            class="w-full rounded-b-lg"
+            className="w-full rounded-b-lg"
             src={personalThanks.pictureUrl}
             alt={personalThanks.name}
           ></img>
@@ -96,7 +110,7 @@ export default function SpecialThanksComponent() {
 
         <div className="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8">
           {data.map((item) => {
-            return <PersonalThanksComponent personalThanks={item} />;
+            return <PersonalThanksComponent key={item.name} personalThanks={item} />;
           })}
         </div>
       </div>
