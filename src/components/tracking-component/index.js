@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const API_KEY = "edaf0cc9-7194-4450-b02b-4c43b2524af8";
 const USERNAME = "ht_yew@hotmail.com";
 const PASSWORD = "FksGc2w2Hyh5Fc";
+const JOURNAL_ID = "a9e8a9b1c9fc4869a60a271a8d16c92e";
 
 async function getLocationDetails(entryId) {
   var headers = new Headers();
@@ -17,7 +18,7 @@ async function getLocationDetails(entryId) {
     redirect: "follow",
   };
   const response = await fetch(
-    `https://api.whereishong.com/Journals/59b961b3185b4ba992818876d9f7779e/entries/${entryId}`,
+    `https://api.whereishong.com/Journals/${JOURNAL_ID}/entries/${entryId}`,
     requestOptions
   );
   return await response.json();
@@ -35,7 +36,7 @@ async function getLocations() {
   };
 
   const response = await fetch(
-    "https://api.whereishong.com/Journals/59b961b3185b4ba992818876d9f7779e/entries",
+    `https://api.whereishong.com/Journals/${JOURNAL_ID}/entries`,
     requestOptions
   );
   let locations = await response.json();
