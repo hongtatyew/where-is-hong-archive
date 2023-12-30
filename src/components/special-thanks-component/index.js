@@ -68,7 +68,7 @@ function PersonalThanksComponent({ personalThanks }) {
         </div>
         {personalThanks.pictureUrl && (
           <img
-            class="w-full rounded-b-lg"
+            className="w-full rounded-b-lg"
             src={personalThanks.pictureUrl}
             alt={personalThanks.name}
           ></img>
@@ -96,7 +96,7 @@ export default function SpecialThanksComponent() {
 
         <div className="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8">
           {data.map((item) => {
-            return <PersonalThanksComponent personalThanks={item} />;
+            return <PersonalThanksComponent key={item.name} personalThanks={item} />;
           })}
         </div>
       </div>

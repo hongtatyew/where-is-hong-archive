@@ -2,93 +2,61 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { format } from "date-fns";
 import { useState, useEffect } from "react";
 
+const API_KEY = "edaf0cc9-7194-4450-b02b-4c43b2524af8";
+const USERNAME = "ht_yew@hotmail.com";
+const PASSWORD = "FksGc2w2Hyh5Fc";
+
+async function getLocationDetails(entryId) {
+  var headers = new Headers();
+  headers.append("Authorization", `Basic ${btoa(`${USERNAME}:${PASSWORD}`)}`);
+  headers.append("X-Api-Key", `${API_KEY}`);
+
+  var requestOptions = {
+    method: "GET",
+    headers: headers,
+    redirect: "follow",
+  };
+  const response = await fetch(
+    `https://api.whereishong.com/Journals/59b961b3185b4ba992818876d9f7779e/entries/${entryId}`,
+    requestOptions
+  );
+  return await response.json();
+}
+
+async function getLocations() {
+  var headers = new Headers();
+  headers.append("Authorization", `Basic ${btoa(`${USERNAME}:${PASSWORD}`)}`);
+  headers.append("X-Api-Key", `${API_KEY}`);
+
+  var requestOptions = {
+    method: "GET",
+    headers: headers,
+    redirect: "follow",
+  };
+
+  const response = await fetch(
+    "https://api.whereishong.com/Journals/59b961b3185b4ba992818876d9f7779e/entries",
+    requestOptions
+  );
+  let locations = await response.json();
+
+  const locationPromises = locations
+    .sort(
+      (a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
+    )
+    .slice(0, 10)
+    .map((location) => getLocationDetails(location.id));
+
+  const locationDetails = await Promise.all(locationPromises);
+  return locationDetails.filter((location) => location.coordinates != null);
+}
+
 export default function TrackingComponent() {
-  const [locations, setLocations] = useState([]);
+  const [locations, setLocations] = useState(null);
   useEffect(() => {
-    setTimeout(() => {
-      setLocations([
-        {
-          latitude: 3.0012515499439996,
-          longitude: 101.6139173069731,
-          location: "Puchong, Selangor, Malaysia",
-          weather: {
-            temperature: 0, // Celsius
-            condition: "sunny", // clear, sunny, raini, cloudy, etc
-            windSpeed: 0, // kph
-          },
-          description:
-            "Here we go, all geared up and ready to roll! Today marks the beginning of my journey towards Denmark. Hoping to reach Sungai Besar before the rain pours down. 🙏🏻", // 2000 characters?
-          updatedAt: new Date("2023-12-31T07:00:00+08:00"), // iso8601 with timezone
-        },
-      ]);
-      // setLocations([
-      //   {
-      //     latitude: 3.003664916524096,
-      //     longitude: 101.61663645306207,
-      //     location: "Milan, Italy",
-      //     weather: {
-      //       temperature: 0, // Celsius
-      //       condition: "sunny", // clear, sunny, raini, cloudy, etc
-      //       windSpeed: 0, // kph
-      //     },
-      //     description:
-      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-      //     updatedAt: new Date("2023-12-17T08:02:16.935Z"), // iso8601 with timezone
-      //   },
-      //   {
-      //     latitude: 3.0559677940849603,
-      //     longitude: 101.49782988750258,
-      //     location: "Milan, Italy",
-      //     weather: {
-      //       temperature: 0, // Celsius
-      //       condition: "windy", // clear, sunny, raini, cloudy, etc
-      //       windSpeed: 0, // kph
-      //     },
-      //     description:
-      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-      //     updatedAt: new Date(), // iso8601 with timezone
-      //   },
-      //   {
-      //     latitude: 3.2558609628641193,
-      //     longitude: 101.30816591820917,
-      //     location: "Milan, Italy",
-      //     weather: {
-      //       temperature: 0, // Celsius
-      //       condition: "cloudy", // clear, sunny, raini, cloudy, etc
-      //       windSpeed: 0, // kph
-      //     },
-      //     description:
-      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-      //     updatedAt: new Date(), // iso8601 with timezone
-      //   },
-      //   {
-      //     latitude: 3.3220284585844224,
-      //     longitude: 101.26533814132293,
-      //     location: "Milan, Italy",
-      //     weather: {
-      //       temperature: 0, // Celsius
-      //       condition: "rain", // clear, sunny, raini, cloudy, etc
-      //       windSpeed: 0, // kph
-      //     },
-      //     description:
-      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-      //     updatedAt: new Date(), // iso8601 with timezone
-      //   },
-      //   {
-      //     latitude: 3.424245504492505,
-      //     longitude: 101.1772101401936,
-      //     location: "Milan, Italy",
-      //     weather: {
-      //       temperature: 0, // Celsius
-      //       condition: "thunderstorm", // clear, sunny, raini, cloudy, etc
-      //       windSpeed: 0, // kph
-      //     },
-      //     description:
-      //       "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.", // 2000 characters?
-      //     updatedAt: new Date(), // iso8601 with timezone
-      //   },
-      // ]);
-    }, 2000);
+    getLocations().then((locations) => {
+      setLocations(locations);
+    });
   }, []);
 
   return (
@@ -163,17 +131,15 @@ export default function TrackingComponent() {
   );
 }
 
-function WeatherComponent({ condition }) {
-  // https://docs.tomorrow.io/reference/data-layers-weather-codes
-  if (condition === "rain")
-    return <FontAwesomeIcon icon="fa-solid fa-cloud-showers-heavy" />;
-  if (condition === "sunny") return <FontAwesomeIcon icon="fa-solid fa-sun" />;
-  if (condition === "cloudy")
-    return <FontAwesomeIcon icon="fa-solid fa-cloud" />;
-  if (condition === "thunderstorm")
-    return <FontAwesomeIcon icon="fa-solid fa-cloud-bolt" />;
-  if (condition === "windy") return <FontAwesomeIcon icon="fa-solid fa-wind" />;
-  return <FontAwesomeIcon icon="fa-solid fa-question" />;
+function WeatherComponent({ weather }) {
+  let conditionImageName = weather.condition.toLowerCase().replace(/ /g, "_");
+  return (
+    <img
+      src={`img/weather-conditions/${conditionImageName}.svg`}
+      alt={weather.condition}
+      className="w-3.5 h-3.5"
+    />
+  );
 }
 
 function LocationTimelineSkelatonComponents() {
@@ -228,28 +194,30 @@ function LocationTimelineSkelatonComponents() {
 }
 
 function LocationTimelineComponents({ locations }) {
-  if (locations.length === 0) return <LocationTimelineSkelatonComponents />;
+  if (locations == null) return <LocationTimelineSkelatonComponents />;
+  if (locations.length === 0) return <div>No records</div>;
 
   return locations.map((item, index) => {
     return (
       <div className="group relative py-6 pl-8" key={index}>
         <div className="mb-1 flex flex-col items-start before:absolute before:left-2 before:h-full before:-translate-x-1/2 before:translate-y-3 before:self-start before:bg-slate-300 before:px-px after:absolute after:left-2 after:box-content after:h-2 after:w-2 after:-translate-x-1/2 after:translate-y-1.5 after:rounded-full after:border-4 after:border-slate-50 after:bg-indigo-600 group-last:before:hidden">
           <time className="left-0 mb-3 inline-flex h-6 px-4 translate-y-0.5 items-center justify-center rounded-full bg-emerald-100 text-xs font-semibold uppercase text-emerald-600">
-            {format(item.updatedAt, "dd MMM yyyy, p")}
+            {format(new Date(item.created), "dd MMM yyyy, p")}
           </time>
 
           <div className="text-xl font-bold text-slate-900 mb-2">
-            {item.location}
+            {item.location.city}, {item.location.country}
           </div>
           <div className="flex flex-col sm:flex-row text-sm text-slate-500">
             <div className="pb-1 sm:pr-4 sm:pb-0">
               <FontAwesomeIcon icon={["fas", "map-location"]} />
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${item.latitude},${item.longitude}`}
+                href={`https://www.google.com/maps/search/?api=1&query=${item.coordinates.latitude},${item.coordinates.longitude}`}
                 target="_blank"
                 className="ml-4"
               >
-                {item.latitude.toFixed(4)}, {item.longitude.toFixed(4)}
+                {item.coordinates.latitude.toFixed(4)},{" "}
+                {item.coordinates.longitude.toFixed(4)}
               </a>
             </div>
             <div className="py-1 sm:px-4 sm:py-0">
@@ -260,22 +228,23 @@ function LocationTimelineComponents({ locations }) {
               <FontAwesomeIcon icon={["fas", "wind"]} />{" "}
               <span className="ml-4">{item.weather.windSpeed} km/h</span>
             </div>
-            <div className="pt-1 sm:pl-4 sm:pt-0">
-              <WeatherComponent condition={item.weather.condition} />
+            <div className="pt-1 sm:pl-4 sm:pt-0 flex items-center">
+              <WeatherComponent weather={item.weather} />
               <span className="ml-4">{item.weather.condition}</span>
             </div>
           </div>
         </div>
 
-        <div className="text-slate-500">{item.description}</div>
+        <div className="text-slate-500">{item.notes}</div>
       </div>
     );
   });
 }
 
 function GoogleMap({ locations }) {
+  if (locations == null) return <></>;
   const coordinates = locations.map(
-    (item) => `${item.latitude},${item.longitude}`
+    (item) => `${item.coordinates.latitude},${item.coordinates.longitude}`
   );
 
   if (coordinates.length === 0) return <></>;
