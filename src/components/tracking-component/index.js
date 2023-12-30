@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 const API_KEY = "edaf0cc9-7194-4450-b02b-4c43b2524af8";
 const USERNAME = "ht_yew@hotmail.com";
 const PASSWORD = "FksGc2w2Hyh5Fc";
-const JOURNAL_ID = "a9e8a9b1c9fc4869a60a271a8d16c92e";
+const JOURNAL_ID = "84b73369f7ee4c0eb458705a34b04057";
 
 async function getLocationDetails(entryId) {
   var headers = new Headers();
