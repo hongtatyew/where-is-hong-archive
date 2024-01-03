@@ -68,8 +68,8 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          { to: "/", label: "Home", position: "left" },
-          { to: "/journals", label: "Journals", position: "left" },
+          // { to: "/", label: "Home", position: "left" },
+          // { to: "/journals", label: "Journals", position: "left" },
           {
             href: "https://www.facebook.com/whereishong",
             position: "right",

@@ -6,6 +6,7 @@ const API_KEY = "edaf0cc9-7194-4450-b02b-4c43b2524af8";
 const USERNAME = "ht_yew@hotmail.com";
 const PASSWORD = "FksGc2w2Hyh5Fc";
 const JOURNAL_ID = "84b73369f7ee4c0eb458705a34b04057";
+const NUMBER_OF_RECORD = 20;
 
 async function getLocationDetails(entryId) {
   var headers = new Headers();
@@ -45,7 +46,7 @@ async function getLocations() {
     .sort(
       (a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
     )
-    .slice(0, 10)
+    .slice(0, NUMBER_OF_RECORD)
     .map((location) => getLocationDetails(location.id));
 
   const locationDetails = await Promise.all(locationPromises);
@@ -112,7 +113,7 @@ export default function TrackingComponent() {
                 and beyond!
               </p>
               <p className="mt-3 text-sm leading-8 text-gray-500">
-                Please note: only the most recent 5 locations will be displayed.
+                Please note: only the most recent {NUMBER_OF_RECORD} locations will be displayed.
               </p>
             </div>
           </div>
@@ -209,7 +210,7 @@ function LocationTimelineComponents({ locations }) {
           <div className="text-xl font-bold text-slate-900 mb-2">
             {item.location.city}, {item.location.country}
           </div>
-          <div className="flex flex-col sm:flex-row text-sm text-slate-500">
+          <div className="flex flex-col sm:flex-row md:grid md:grid-cols-2 text-sm text-slate-500 md:mb-2">
             <div className="pb-1 sm:pr-4 sm:pb-0">
               <FontAwesomeIcon icon={["fas", "map-location"]} />
               <a
@@ -225,9 +226,9 @@ function LocationTimelineComponents({ locations }) {
               <FontAwesomeIcon icon={["fas", "temperature-low"]} />{" "}
               <span className="ml-4">{item.weather.temperature} °C</span>
             </div>
-            <div className="py-1 sm:px-4 sm:py-0">
+            <div className="py-1 sm:px-4 sm:py-0 md:pl-0">
               <FontAwesomeIcon icon={["fas", "wind"]} />{" "}
-              <span className="ml-4">{item.weather.windSpeed} km/h</span>
+              <span className="ml-4">{item.weather.windSpeed} m/s</span>
             </div>
             <div className="pt-1 sm:pl-4 sm:pt-0 flex items-center">
               <WeatherComponent weather={item.weather} />
