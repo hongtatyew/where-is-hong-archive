@@ -210,7 +210,7 @@ function LocationTimelineComponents({ locations }) {
           <div className="text-xl font-bold text-slate-900 mb-2">
             {item.location.city}, {item.location.country}
           </div>
-          <div className="flex flex-col sm:flex-row text-sm text-slate-500">
+          <div className="flex flex-col sm:flex-row md:grid md:grid-cols-2 text-sm text-slate-500 md:mb-2">
             <div className="pb-1 sm:pr-4 sm:pb-0">
               <FontAwesomeIcon icon={["fas", "map-location"]} />
               <a
@@ -226,7 +226,7 @@ function LocationTimelineComponents({ locations }) {
               <FontAwesomeIcon icon={["fas", "temperature-low"]} />{" "}
               <span className="ml-4">{item.weather.temperature} °C</span>
             </div>
-            <div className="py-1 sm:px-4 sm:py-0">
+            <div className="py-1 sm:px-4 sm:py-0 md:pl-0">
               <FontAwesomeIcon icon={["fas", "wind"]} />{" "}
               <span className="ml-4">{item.weather.windSpeed} m/s</span>
             </div>
