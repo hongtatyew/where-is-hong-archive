@@ -228,7 +228,7 @@ function LocationTimelineComponents({ locations }) {
             </div>
             <div className="py-1 sm:px-4 sm:py-0">
               <FontAwesomeIcon icon={["fas", "wind"]} />{" "}
-              <span className="ml-4">{item.weather.windSpeed} km/h</span>
+              <span className="ml-4">{item.weather.windSpeed} m/s</span>
             </div>
             <div className="pt-1 sm:pl-4 sm:pt-0 flex items-center">
               <WeatherComponent weather={item.weather} />
