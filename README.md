@@ -1,60 +1,81 @@
-# Website
+# Where is Hong?
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Welcome to the Where is Hong UI at [whereishong.com](https://whereishong.com) read me! This project serves as a personal website designed to track Hong's whereabouts. Hong collaborated with his best friend, [Michael Mortensen](https://github.com/gimlichael), who is responsible for the [backend - Wish Journey](https://github.com/gimlichael/wish-journey). The UI is built using Docusaurus, providing an interactive and visually appealing display for Hong's journey.
+
+## Overview
+
+The Where is Hong UI offers a glimpse into Hong's adventures, providing a visual representation of his current location and past experiences. This collaborative effort combines the frontend design with Michael's backend expertise, resulting in a seamless and engaging user experience.
+
+Feel free to explore the documentation for insights into the project structure, customization options, and deployment procedures.
+
+
+
+## Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Node.js (version 14 or above)
+- Yarn
 
 ### Installation
 
-```
-$ yarn
-```
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/gimlichael/wish-journey.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd wish-journey
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    yarn install
+    ```
 
 ### Local Development
 
-```
-$ yarn start
-```
+To run the Docusaurus server locally and preview the UI:
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
+```bash
+yarn start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Visit [http://localhost:3000](http://localhost:3000) in your browser to view the UI.
 
-### Deployment
+## Usage
 
-Using SSH:
+Explore the interactive UI to navigate through different sections of Hong's epic bike trip. Enjoy the photos, stories, and memories that have been captured during the journey.
 
+## Customization
+
+Feel free to customize the content and appearance of the UI by editing the markdown files in the `docs` directory. Update the configuration in `docusaurus.config.js` to match preferences.
+
+## Deployment
+
+When Hong is ready to share the epic bike trip with others:
+
+```bash
+yarn build
+yarn deploy
 ```
-$ USE_SSH=true yarn deploy
-```
 
-Not using SSH:
+This will build the static files and deploy them to [whereishong.com](https://whereishong.com).
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+## License
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+This project is for personal use only and is not intended for redistribution or contributions.
 
+## Acknowledgments
 
-### Reference
+Special thanks to [Docusaurus](https://docusaurus.io/) for providing an easy-to-use documentation framework.
 
-https://infima.dev/docs/layout/grid
+---
 
-#### Example of landing page in Figma
-https://www.figma.com/file/X8EAalJa8drwDp71oZVnWH/50%2B-Landing-page-designs-(Community)?type=design&node-id=801-2256&mode=design&t=5IWGXjUCytGQCioY-0
-
-#### timeline
-https://codepen.io/darcyvoutt/pen/ogPrpK/
-
-#### tailwind landing page
-https://tailwindui.com/components/marketing/sections/heroes
-
-#### Google api token
-```
-AIzaSyDw1nB817qQxGFQ4AtovQAQx6y23B-qsoA
-```
+Happy biking and enjoy reminiscing about the epic journey!
