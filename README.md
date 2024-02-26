@@ -1,6 +1,6 @@
 # Where is Hong?
 
-Welcome to the Where is Hong UI at [whereishong.com](https://whereishong.com) read me! This project serves as a personal website designed to track Hong's whereabouts. Hong collaborated with his best friend, [Michael Mortensen](https://github.com/gimlichael), who is responsible for the [backend - Wish Journey](https://github.com/gimlichael/wish-journey). The UI is built using Docusaurus, providing an interactive and visually appealing display for Hong's journey.
+Welcome to the Where is Hong UI at [whereishong.com](https://whereishong.com) read me! This project serves as a personal website designed to track Hong's whereabouts. Hong collaborated with his best friend, [Michael Mortensen](https://github.com/gimlichael), who is responsible for the backend - [Wish Journey](https://github.com/gimlichael/wish-journey). The UI is built using Docusaurus, providing an interactive and visually appealing display for Hong's journey.
 
 ## Overview
 
