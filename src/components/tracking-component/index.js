@@ -2,55 +2,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { format } from "date-fns";
 import { useState, useEffect } from "react";
 
-const API_KEY = "edaf0cc9-7194-4450-b02b-4c43b2524af8";
-const USERNAME = "ht_yew@hotmail.com";
-const PASSWORD = "FksGc2w2Hyh5Fc";
-const JOURNAL_ID = "84b73369f7ee4c0eb458705a34b04057";
 const NUMBER_OF_RECORD = 20;
 
-async function getLocationDetails(entryId) {
-  var headers = new Headers();
-  headers.append("Authorization", `Basic ${btoa(`${USERNAME}:${PASSWORD}`)}`);
-  headers.append("X-Api-Key", `${API_KEY}`);
-
-  var requestOptions = {
-    method: "GET",
-    headers: headers,
-    redirect: "follow",
-  };
-  const response = await fetch(
-    `https://api.whereishong.com/Journals/${JOURNAL_ID}/entries/${entryId}`,
-    requestOptions
-  );
-  return await response.json();
-}
-
 async function getLocations() {
-  var headers = new Headers();
-  headers.append("Authorization", `Basic ${btoa(`${USERNAME}:${PASSWORD}`)}`);
-  headers.append("X-Api-Key", `${API_KEY}`);
-
   var requestOptions = {
     method: "GET",
-    headers: headers,
     redirect: "follow",
   };
 
   const response = await fetch(
-    `https://api.whereishong.com/Journals/${JOURNAL_ID}/entries`,
+    `https://fnmpxq6dxh5o3e2yuctzcjbnmu0sxuex.lambda-url.ap-southeast-1.on.aws/journalentries`,
     requestOptions
   );
   let locations = await response.json();
 
-  const locationPromises = locations
+  return locations
     .sort(
       (a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
     )
     .slice(0, NUMBER_OF_RECORD)
-    .map((location) => getLocationDetails(location.id));
-
-  const locationDetails = await Promise.all(locationPromises);
-  return locationDetails.filter((location) => location.coordinates != null);
+    .filter((location) => location.coordinates != null);
 }
 
 export default function TrackingComponent() {
@@ -113,7 +84,8 @@ export default function TrackingComponent() {
                 and beyond!
               </p>
               <p className="mt-3 text-sm leading-8 text-gray-500">
-                Please note: only the most recent {NUMBER_OF_RECORD} locations will be displayed.
+                Please note: only the most recent {NUMBER_OF_RECORD} locations
+                will be displayed.
               </p>
             </div>
           </div>
