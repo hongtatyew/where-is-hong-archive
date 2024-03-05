@@ -6,6 +6,7 @@ import HeroSection from "../components/hero-component";
 import SpecialThanksComponent from "../components/special-thanks-component";
 import InstagramFeedComponent from "../components/instagram-feed-component";
 import ReasonToCycleComponent from "../components/reason-to-cycle-component";
+import BuyMeCoffeeComponent from "../components/buy-me-coffee-component";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -13,6 +14,7 @@ export default function Home() {
     <Layout title="Home" description={siteConfig.tagline}>
       <HeroSection title={siteConfig.title} tagline={siteConfig.tagline} />
       <main>
+        <BuyMeCoffeeComponent />
         <ReasonToCycleComponent />
         <TrackingComponent />
         {/* <InstagramFeedComponent />
@@ -22,5 +24,3 @@ export default function Home() {
     </Layout>
   );
 }
-
-
