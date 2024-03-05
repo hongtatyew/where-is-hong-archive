@@ -6,6 +6,8 @@ import HeroSection from "../components/hero-component";
 import SpecialThanksComponent from "../components/special-thanks-component";
 import InstagramFeedComponent from "../components/instagram-feed-component";
 import ReasonToCycleComponent from "../components/reason-to-cycle-component";
+import FundComponent from '../components/fund-component';
+import FundContributorsComponent from '../components/fund-contributors-component';
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -18,6 +20,8 @@ export default function Home() {
         {/* <InstagramFeedComponent />
          */}
         <SpecialThanksComponent />
+        <FundComponent></FundComponent>
+        <FundContributorsComponent></FundContributorsComponent>
       </main>
     </Layout>
   );
